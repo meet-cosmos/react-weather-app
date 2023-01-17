@@ -5,7 +5,7 @@ const Weather = ()=>{
     const [city, updateCity] = useState("");
     const [data, updateData] = useState("");
     const WeatherApi = async ()=>{
-        await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=50adc09477fc733df0250494c3278d16`).then((weatherdata)=>{
+        await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&${APIKey}`).then((weatherdata)=>{
             updateData(weatherdata.data.main)
             console.log(weatherdata.data)
         }).catch((e)=>{
